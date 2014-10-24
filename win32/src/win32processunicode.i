@@ -1,11 +1,16 @@
-/* File : win32process.i */
+/* File : win32processunicode.i */
 
-%module win32process // An interface to the win32 Process and Thread API's
+%module win32processunicode // An interface to the win32 Process and Thread API's
 
 %{
 #ifndef MS_WINCE
 #include "process.h"
 #endif
+
+//make tchar -> wchar
+#define UNICODE
+#define _UNICODE
+
 #include "windows.h"
 #include "Psapi.h"
 #include "PyWinTypes.h"
@@ -16,6 +21,7 @@
 
 %{
 #include "structmember.h"
+
 
 #define CHECK_PFN(fname)if (pfn##fname==NULL) return PyErr_Format(PyExc_NotImplementedError,"%s is not available on this platform", #fname);
 
