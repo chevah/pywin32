@@ -1615,6 +1615,7 @@ for info in (
         ("win32pipe", "", None, None, 'win32/src/win32pipe.i win32/src/win32popen.cpp'),
         ("win32print", "winspool user32 gdi32", None, 0x0500, "win32/src/win32print/win32print.cpp"),
         ("win32process", "advapi32 user32", None, 0x0500, "win32/src/win32process.i"),
+        ("win32processunicode", "advapi32 user32", None, 0x0500, "win32/src/win32processunicode.i"),
         ("win32profile", "Userenv", True, None, 'win32/src/win32profilemodule.cpp'),
         ("win32ras", "rasapi32 user32", None, 0x0500, "win32/src/win32rasmodule.cpp"),
         ("win32security", "advapi32 user32 netapi32", True, 0x0500, """
